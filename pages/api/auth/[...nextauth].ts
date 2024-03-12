@@ -3,10 +3,11 @@ import { prisma } from '@/lib/prisma';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import NextAuth, { AuthOptions } from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
+import {Adapter} from "next-auth/adapters";
 
 export const authOptions: AuthOptions = {
-// @ts-ignore
-    adapter: PrismaAdapter(prisma),
+
+    adapter: PrismaAdapter(prisma) as Adapter,
     theme: {
         logo: '/images/logo-text.png',
     },
