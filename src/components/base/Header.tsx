@@ -5,6 +5,7 @@ import {Typography} from '../ui/Typography';
 import Image from "next/image";
 import {Button} from "@/components/ui/button"
 import {LoginButton} from "@/features/auth/LoginButton";
+import AuthButton from "@/features/auth/AuthButton";
 
 
 export function Header() {
@@ -19,7 +20,7 @@ export function Header() {
                 </div>
                 <div className="flex flex-1 items-center justify-end space-x-4 ">
                     <nav className="flex items-center gap-5 space-x-1">
-                        <LoginButton />
+                        <AuthButton />
                         <ThemeToggle/>
                     </nav>
                 </div>
