@@ -15,7 +15,7 @@ export const LoginButton = () => {
             {mutationLogin.isPending ? (
                 <Loader size={12}/>
             ) : <LogIn size={12}/>}
-            Login
+            Connexion
         </Button>
     )
 }
