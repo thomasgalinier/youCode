@@ -4,7 +4,13 @@ import {Session} from "next-auth";
 import {Button} from "@/components/ui/button";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {signOut} from "next-auth/react";
-import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
 import {LogOut, User} from "lucide-react";
 import Link from "next/link";
 
@@ -33,9 +39,10 @@ const LoggedInButton = (props: LoggedInButtonProps) => {
                         Account
                     </Link>
                 </DropdownMenuItem>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem>
                     <LogOut size={12} className="mr-3"/>
-                    Déconnexion
+                    LogOut
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
