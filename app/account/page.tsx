@@ -6,6 +6,7 @@ import {Typography} from "@/components/ui/Typography";
 import Link from "next/link";
 import {buttonVariants} from "@/components/ui/button";
 import {LogoutButton} from "@/features/auth/LogoutButton";
+import {prisma} from "@/lib/prisma";
 
 
 const AccountPage = async () => {
@@ -27,7 +28,7 @@ const AccountPage = async () => {
             </CardHeader>
             <CardContent className="flex flex-col gap-3">
                 <Link href="/account/settings" className={buttonVariants({variant: "outline", size: "lg"})}>Settings</Link>
-                <Link href="/admin" className={buttonVariants({variant: "outline", size: "lg"})}>Admin</Link>
+                <Link href="/admin/courses" className={buttonVariants({variant: "outline", size: "lg"})}>Admin</Link>
             </CardContent>
             <CardFooter className="flex flex-row-reverse">
                 <LogoutButton/>
