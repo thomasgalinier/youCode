@@ -8,19 +8,21 @@ import { Inter } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 import { Providers } from './Provider';
 import './globals.css';
+import {SessionProvider} from "next-auth/react";
+import {getAuthSession} from "@/lib/auth";
 
 const fontSans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
-export const metadata: Metadata = {
-  title: SiteConfig.title,
-  description: SiteConfig.description,
-};
 
-export default function RootLayout({ children }: PropsWithChildren) {
+
+export default async function RootLayout({ children }: PropsWithChildren) {
+
+    const session = await getAuthSession()
   return (
       <>
         <html lang="en" className="h-full" suppressHydrationWarning>
         <head />
+
         <body
             className={cn(
                 'h-full bg-background font-sans antialiased',

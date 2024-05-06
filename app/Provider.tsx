@@ -11,14 +11,14 @@ const queryClient = new QueryClient();
 export const Providers = ({children}: PropsWithChildren) => {
     return (
         <>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                <Toaster/>
-                <SessionProvider>
-                    <QueryClientProvider client={queryClient}>
+            <QueryClientProvider client={queryClient}>
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                    <Toaster/>
+                    <SessionProvider>
                         {children}
-                    </QueryClientProvider>
-                </SessionProvider>
-            </ThemeProvider>
+                    </SessionProvider>
+                </ThemeProvider>
+            </QueryClientProvider>
         </>
     );
 };
